@@ -53,11 +53,23 @@ DeepSeek Harness（Web / Desktop）的**上下文面板**。两种界面，同�
 
 ## 安装
 
-### 图形界面（推荐）
+### 从 GitHub（推荐，任何人可用）
 
-侧栏 **插件** → **添加插件** → 填本目录的绝对路径 → 安装完成后点**立即启用**，然后重启 Harness（或刷新页面）。
+```sh
+dsh plugin --profile <profile> add git+https://github.com/4215135/dsh-context-panel
+```
 
-### 命令行
+也可以按 `dsh-plugin.market` 的建议**钉住某个 commit**，装的代码就与它扫描过的那份完全一致：
+
+```sh
+dsh plugin --profile <profile> add github:4215135/dsh-context-panel#<commit>
+```
+
+本插件没有安装期构建脚本，所以不会触发 pnpm 的 `allowBuilds` 批准流程。
+
+### 从本地目录 / tarball
+
+侧栏 **插件** → **添加插件** → 填目录的绝对路径（或 `.tgz` 路径）→ 安装完成后点**立即启用**，然后重启 Harness（或刷新页面）。命令行等价写法：
 
 ```sh
 dsh plugin --profile desktop add /绝对路径/dsh-context-panel

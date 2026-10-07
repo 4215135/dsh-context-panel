@@ -6,6 +6,15 @@
   "main": "index.js",
   "icon": "./icon.svg",
   "license": "MIT",
+  "author": "4215135 <4215135@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4215135/dsh-context-panel.git"
+  },
+  "homepage": "https://github.com/4215135/dsh-context-panel#readme",
+  "bugs": {
+    "url": "https://github.com/4215135/dsh-context-panel/issues"
+  },
   "scripts": {
     "test": "node test/verify.mjs",
     "test:runtime": "node test/runtime-graph.mjs"

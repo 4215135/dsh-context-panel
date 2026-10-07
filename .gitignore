@@ -1,0 +1,12 @@
+# Dependencies (this package has none of its own; a checkout may still grow them)
+node_modules/
+
+# Packed artifacts — npm pack output is a build product, not a source file
+*.tgz
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

@@ -1,0 +1,90 @@
+{
+  "name": "dsh-context-panel",
+  "version": "0.1.0",
+  "description": "Context window, session metrics and token composition panel for DeepSeek Harness (Web). Reads the official token-meter and session-stats projections: window occupancy with the compaction threshold, distance to compaction, KV-cache hit rate, session totals, and both context and token breakdowns.",
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/verify.mjs",
+    "test:runtime": "node test/runtime-graph.mjs"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "context-window",
+    "token-usage",
+    "session-metrics",
+    "kv-cache",
+    "compaction"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dshhub": {
+    "schemaVersion": 1,
+    "displayName": "Context Panel",
+    "summary": "上下文窗口水位与压缩线、距压缩余量、KV 缓存命中率、会话累计与请求数、上下文与 Token 构成、费用估算，以及 MCP 工具观察。数据来自官方会话投影；唯一的网络面是一个只回环、只 GET 的费率端点。",
+    "categories": [
+      "观测",
+      "上下文",
+      "费用",
+      "Web UI"
+    ],
+    "surfaces": [
+      "host",
+      "web"
+    ],
+    "compatibility": {
+      "dsh": ">=0.2.0-rc.2",
+      "node": ">=22"
+    },
+    "permissions": {
+      "network": []
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-session": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-session-projection": "^0.2.0-rc.2",
+    "react": "^18.2.0 || ^19.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": { "optional": true },
+    "react": { "optional": true }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Context panel",
+    "description": "Context-window occupancy with the compaction threshold, distance to compaction, KV-cache hit rate, session totals and request count, plus context and token breakdowns. All figures come from official session projections; no network, no credential access."
+  }
+}

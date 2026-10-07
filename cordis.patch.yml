@@ -1,0 +1,12 @@
+# dsh-context-panel bundle patch.
+#
+# One host row whose name is exactly the package name: the client module loader
+# attaches this package's browser half (declared by `dsh.client`) to the row
+# whose specifier equals the package name, so the row must not be renamed.
+#
+# The host half is intentionally empty — every figure in the panel comes from
+# official session projections, so the plugin owns no service, no endpoint and
+# no credentials.
+- insert:
+    - id: context-panel
+      name: 'dsh-context-panel'
